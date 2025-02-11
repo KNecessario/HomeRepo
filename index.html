@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fixed Navbar</title>
+    <link rel="icon" href="img/image.png" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <!--Font import Montserrat-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <!--Nav Bar-->
+    <nav class="navbar navbar-expand-lg d-flex justify-content-between">
+      <a class="navbar-brand" href="#">
+        <img src="image/logo.png" alt="logo" />
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse w-100" id="navbarNav">
+        <div class="mx-auto d-flex justify-content-center">
+          <ul class="nav nav-pills nav-fill">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Release Note</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Documentation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!--When the search bar on full scale will show the search bar but when the nav link proceed to menu burger it will hide the search bar-->
+      <!--full screen show logo left nav button middle right search bar-->
+      <button class="btnContact">Contact Us</button>
+    </nav>
+
+    <!--Main Content-->
+    <section class="container-fluid" id="containerfluid1">
+      <div class="container" id="layout1">
+        <div class="container" id="title1">
+          <h1>Grow Your Business with Unified IT Solutions</h1>
+        </div>
+        <div class="container" id="description1">
+          <h2>A software system that combines the functionalities of Logistics, Human Resource, Inventory, Kanban, and E- commerce into a single platform.</h2>
+        </div>
+        <button id="btnLearnMore">Learn More</button>
+      </div>
+    </section>
+
+<!--Our Services-->
+<section class="container-fluid" id="containerfluid2">
+  <div class="container" id="layout2">
+    <div class="container" id="title2">
+      <h1>Our Services</h1>
+    </div>
+
+
+    <!-- Services Container -->
+    <div class="container" id="grid-services">
+      <!--Card-->
+      <div class="card">
+        <img src="image/BusinessIntegration.png" class="card-img-top" alt="Business Integration">
+        <div class="card-body">
+          <h5 class="card-title">Business Integration</h5>
+          <p class="card-text">Seamlessly unify logistics, human resources, inventory management, kanban workflows, and e-commerce into one comprehensive platform with LHIKE ERP.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="image/EnterpriseManagement.png" class="card-img-top" alt="Enterprise Management">
+        <div class="card-body">
+          <h5 class="card-title">Enterprise Management</h5>
+          <p class="card-text">Optimize and streamline your business operations with our comprehensive Enterprise Management solutions.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="image/CentralizedData.png" class="card-img-top" alt="Centralized Data">
+        <div class="card-body">
+          <h5 class="card-title">Centralized Data</h5>
+          <p class="card-text">Experience the power of centralized data management with LHIKE ERP.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="image/streamlinedOperations.png" class="card-img-top" alt="Streamlined Operations">
+        <div class="card-body">
+          <h5 class="card-title">Streamlined Operations</h5>
+          <p class="card-text">Achieve greater efficiency and productivity with LHIKE ERP's streamlined operations.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="image/ProcessAutomations.png" class="card-img-top" alt="Process Automations">
+        <div class="card-body">
+          <h5 class="card-title">Process Automations</h5>
+          <p class="card-text">Enhance your business efficiency with LHIKE ERP's process automation capabilities.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="image/OperationalEfficiency.png" class="card-img-top" alt="Operational Efficiency">
+        <div class="card-body">
+          <h5 class="card-title">Operational Efficiency</h5>
+          <p class="card-text">Maximize your business's performance with LHIKE ERP's operational efficiency solutions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script></script>
+  </body>
+</html>

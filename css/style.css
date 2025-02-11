@@ -1,0 +1,257 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+ 
+}
+/* variables */
+:root {
+  --bg-color: #fafafb;
+  --primary-color: #342d3e;
+  --secondary-color: #708498;
+  --text-color: #342d3e;
+  --navbar-text-color: #fafafb;
+  --accent-color: #4bbb8a;
+  --bg-secondary: #677776;
+  --bg-black:#201C1C;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--bg-color);
+  font-family: "Roboto Slab", serif;
+}
+
+/* navbar */
+.navbar {
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Montserrat", sans-serif;
+  padding: 10px 50px;
+  font-weight: 600;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  position:fixed ;
+  z-index: 1;
+  
+}
+
+.navbar img {
+  width: 166px;
+  height: 29px;
+}
+
+.navbar ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+.navbar ul li {
+  margin-right: 20px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: var(--navbar-text-color);
+}
+
+.navbar ul li a:hover {
+    color: var(--accent-color);
+}
+
+.navbar-toggler{
+    color: #fafafb;
+    background-color: var(--navbar-text-color);
+}
+
+.btnContact{
+    padding: 5px;
+    width: 150px;
+    border-radius: 10px;
+    background-color: var(--accent-color);
+    color: #fafafb;
+}
+
+.btnContact:hover{
+    transform: scale(1.1);
+    transition: transform 0.5s;
+    background: var(--bg-black);
+    color: var(--navbar-text-color);
+}
+
+@media screen and (max-width: 992px) {
+  .btnContact{
+    display: none;
+  }
+}
+
+/*Main content*/
+.container-fluid{
+    height: 95vh;
+}
+
+#containerfluid1{
+    background-color: aquamarine;
+    background-image: url(../image/bgImage.png);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    
+}
+
+#layout1{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+
+#layout1 #title1 h1{
+    text-align: center;
+    font-size: 60px;
+    color: var(--navbar-text-color);
+    margin-bottom: 20px;
+}
+
+#layout1 #description1 h2{
+    text-align: center;
+    font-size: 30px;
+    font-weight:200;
+    color: var(--navbar-text-color);
+}
+
+#layout1 #btnLearnMore{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 170px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--accent-color);
+    color: var(--navbar-text-color);
+}
+
+#layout1 #btnLearnMore:hover{
+    background-color: var(--navbar-text-color);
+    color: var(--accent-color);
+}
+
+@media screen and (max-width: 972px) {
+    #layout1 #title1 h1{
+        font-size: 30px;
+    }
+    #layout1 #description1 h2{
+        font-size: 20px;
+    }
+}
+
+/** Our Services */
+
+#containerfluid2 {
+    background-color: var(--primary-color);
+    padding: 30px;
+    height: auto;
+}
+
+#layout2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#layout2 #title2 h1 {
+    font-size: 60px;
+    color: var(--navbar-text-color);
+    margin-bottom: 20px;
+}
+
+#layout2 #description2 h2 {
+    font-size: 30px;
+    font-weight: 200;
+    color: var(--navbar-text-color);
+}
+
+/** Services Cards */
+#grid-services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    width: 30%;
+    background-color: var(--bg-black);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: auto;    
+}
+
+.card img {
+    margin: 0 auto;
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.card-body {
+    color: var(--navbar-text-color);
+    padding: 20px;
+}
+
+.card-body .card-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.card-body .card-text {
+    text-align: justify;
+    font-size: 16px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    transition: transform 0.5s;
+    background-color: var(--accent-color);
+    color:var(--navbar-text-color)
+}
+/** Responsive Design */
+@media screen and (max-width: 972px) {
+    #layout2 #title2 h1 {
+        font-size: 40px;
+    }
+    #layout2 #description2 h2 {
+        font-size: 24px;
+    }
+    #grid-services {
+        justify-content: center;
+    }
+    .card {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 672px) {
+    #grid-services {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        width: 90%;
+    }
+}
