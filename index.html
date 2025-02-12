@@ -22,7 +22,7 @@
   </head>
 
   <body>
-    <!--Nav Bar-->
+    <!--nav bar-->
     <nav class="navbar navbar-expand-lg d-flex justify-content-between">
       <a class="navbar-brand" href="#">
         <img src="image/logo.png" alt="logo" />
@@ -43,27 +43,27 @@
       <div class="collapse navbar-collapse w-100" id="navbarNav">
         <div class="mx-auto d-flex justify-content-center">
           <ul class="nav nav-pills nav-fill">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home</a>
+            <li class="nav-item">
+              <a class="nav-link" href="#containerfluid1">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Release Note</a>
+              <a class="nav-link" href="#containerfluid3">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Documentation</a>
+              <a class="nav-link" href="release-note.html">Release Note</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="documentation.html">Documentation</a>
             </li>
           </ul>
         </div>
       </div>
-      
+
       <button class="btnContact">Contact Us</button>
     </nav>
 
     <!--Main Content-->
-    <section class="container-fluid" id="containerfluid1">
+    <section class="container-fluid" id="containerfluid1" id="section1">
       <div class="container" id="layout1">
         <div class="container" id="title1">
           <h1>Grow Your Business with Unified IT Solutions</h1>
@@ -80,7 +80,7 @@
     </section>
 
     <!--Our Services-->
-    <section class="container-fluid" id="containerfluid2">
+    <section class="container-fluid" id="containerfluid2" id="section2">
       <div class="container" id="layout2">
         <div class="container" id="title2">
           <h1>Our Services</h1>
@@ -183,11 +183,144 @@
       </div>
     </section>
 
-    
+    <!--Who we are-->
+    <section class="container-fluid" id="containerfluid3" id="section3">
+      <div class="container" id="layout3">
+        <div class="container" id="whatwebelieve"><h5>What we believe</h5></div>
+        <div class="container" id="subwhatwebelieve">
+          <h4>
+            At the heart of our mission is the belief that businesses,
+            regardless of their size, should have access to efficient and
+            integrated solutions.
+          </h4>
+        </div>
+        <div class="container" id="wrapper1">
+          <div class="container" id="leftWrap">
+            <h1>Who we are?</h1>
+            <p>
+               Valenin IT Services is your dedicated partner for comprehensive
+              IT software solutions, committed to transforming your business
+              through technology. We specialize in providing tailored services
+              to meet the unique needs of each business, from small enterprises
+              to large corporations. Our team of experts ensures seamless
+              operations, offering innovative solutions designed to drive your
+              success and keep you ahead in a competitive market. At Valenin IT
+              Services, we understand the critical role that IT infrastructure
+              plays in your business, and we are here to support you every step
+              of the way with our reliable, efficient, and cutting-edge
+              services.
+            </p>
+          </div>
+          <div class="container" id="rightWrap">
+            <img src="image/whoweare.png" alt="Who we are" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Mission -->
+    <section class="container-fluid" id="containerfluid4" id="section4">
+      <div class="container" id="layout4">
+        <div class="container" id="wrapper2">
+          <div class="container" id="leftWrapMission">
+            <img src="image/ourmission.png" alt="Our Mission" />
+          </div>
+          <div class="container" id="rightWrapMission">
+            <h1>Our Mission</h1>
+            <p>
+              Our mission is to empower businesses through innovative and
+              reliable IT solutions. We are committed to providing exceptional
+              service and support, tailored to the unique needs of each client.
+              Our goal is to enhance operational efficiency, foster growth, and
+              drive success by leveraging the latest technologies and best
+              practices in the industry. We strive to build long-lasting
+              partnerships with our clients, helping them navigate the
+              complexities of the digital landscape with confidence and ease.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Vision -->
+    <!-- Our Vision -->
+    <section class="container-fluid" id="containerfluid5" id="section5">
+      <div class="container" id="layout5">
+        <div class="container" id="wrapper3">
+          <div class="container" id="leftWrapVision">
+            <h1>Our Vision</h1>
+            <p>
+              At Valenin IT Services, we envision a world where businesses,
+              regardless of size, have access to smart, scalable, and intuitive
+              IT solutions. We are dedicated to leveraging technology to
+              streamline business processes, drive growth, and unlock new
+              opportunities for success.
+            </p>
+          </div>
+          <div class="container" id="rightWrapVision">
+            <img src="image/ourvision.png" alt="Our Vision" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Valenin Position-->
+    <section class="container-fluid" id="containerfluid6">
+      <div class="layout6"></div>
+    </section>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const homeSections = [
+          document.getElementById("containerfluid1"),
+          document.getElementById("containerfluid2"),
+        ];
+        const aboutSections = [
+          document.getElementById("containerfluid3"),
+          document.getElementById("containerfluid4"),
+          document.getElementById("containerfluid5"),
+        ];
+
+        const homeLink = document.querySelector(
+          ".nav-link[href='#containerfluid1']"
+        );
+        const aboutLink = document.querySelector(
+          ".nav-link[href='#containerfluid3']"
+        );
+
+        function updateActiveLink() {
+          let scrollPosition = window.scrollY + window.innerHeight / 3;
+
+          let isInHome = homeSections.some((section) => {
+            let top = section.offsetTop;
+            let bottom = top + section.clientHeight;
+            return scrollPosition >= top && scrollPosition < bottom;
+          });
+
+          let isInAbout = aboutSections.some((section) => {
+            let top = section.offsetTop;
+            let bottom = top + section.clientHeight;
+            return scrollPosition >= top && scrollPosition < bottom;
+          });
+
+          if (isInHome) {
+            homeLink.classList.add("active");
+            aboutLink.classList.remove("active");
+          } else if (isInAbout) {
+            aboutLink.classList.add("active");
+            homeLink.classList.remove("active");
+          } else {
+            homeLink.classList.remove("active");
+            aboutLink.classList.remove("active");
+          }
+        }
+
+        window.addEventListener("scroll", updateActiveLink);
+        updateActiveLink();
+      });
+    </script>
   </body>
 </html>
