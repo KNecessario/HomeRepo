@@ -223,53 +223,54 @@ body {
   color: var(--navbar-text-color);
 }
 
-/** Services Cards */
-#grid-services {
+#layout2 #grid-services {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
   padding: 20px;
+  width: 100%;
 }
 
-.card {
+#layout2 .card {
   width: 30%;
   background-color: var(--bg-black);
   padding: 20px;
   border-radius: 10px;
   height: auto;
   box-shadow: 9px 10px 5px -1px rgba(0, 0, 0, 0.65);
+  transition: 0.3s;
 }
 
-.card img {
+#layout2 .card img {
   margin: 0 auto;
   width: 50%;
   height: auto;
   border-radius: 10px;
 }
 
-.card-body {
+#layout2 .card-body {
   color: var(--navbar-text-color);
   padding: 20px;
 }
 
-.card-body .card-title {
+#layout2 .card-body .card-title {
   font-size: 24px;
   font-weight: bold;
 }
 
-.card-body .card-text {
+#layout2 .card-body .card-text {
   text-align: center;
   font-size: 16px;
 }
 
-.card:hover {
+#layout2 .card:hover {
   transform: scale(1.05);
-  transition: transform 0.5s;
+  transition: 0.5;
   background-color: var(--accent-color);
   color: var(--navbar-text-color);
 }
-/** Responsive Design */
+
 @media screen and (max-width: 972px) {
   #layout2 #title2 h1 {
     font-size: 40px;
@@ -280,7 +281,7 @@ body {
   #grid-services {
     justify-content: center;
   }
-  .card {
+  #layout2 .card {
     width: 45%;
   }
 }
@@ -294,6 +295,40 @@ body {
     width: 90%;
   }
 }
+
+
+
+
+/** Responsive Design **/
+@media screen and(max-width: 972px){
+    #layout2 #title2 h1 {
+        font-size: 40px;
+      }
+      #layout2 #description2 h2 {
+        font-size: 24px;
+      }
+      #grid-services {
+        justify-content: center;
+      }
+      .card1{
+        width:45%;
+      }
+}
+
+@media screen and (max-width: 672px){
+    #grid-services {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card1{
+        width:90%;
+    }
+
+}
+
+
+
+
 
 /* Who we are */
 #containerfluid3 {
@@ -332,7 +367,6 @@ body {
   align-items: center;
   height: auto;
   gap: 40px;
- 
 }
 
 #wrapper1 #leftWrap {
@@ -424,7 +458,7 @@ body {
 
 /* Our Mission */
 #containerfluid4 {
-  background-color: var(--primary-color);
+  background-color: lightgray;
   padding: 30px;
   display: flex;
   justify-content: center;
@@ -453,14 +487,14 @@ body {
 
 #rightWrapMission h1 {
   font-size: 60px;
-  color: var(--navbar-text-color);
+  color: var(--text-color);
   margin-bottom: 20px;
 }
 
 #rightWrapMission p {
   font-size: 28px;
   font-weight: 300;
-  color: var(--navbar-text-color);
+  color:var(--text-color);
   text-align: justify;
 }
 
@@ -530,7 +564,7 @@ body {
 
 /* Our Vision */
 #containerfluid5 {
-  background-color: var();
+  background-color: var(--text-color);
   padding: 30px;
   width: 100%;
   height: auto;
@@ -559,14 +593,14 @@ body {
 
 #leftWrapVision h1 {
   font-size: 60px;
-  color: var(--text-color);
+  color: var(--navbar-text-color);
   margin-bottom: 20px;
 }
 
 #leftWrapVision p {
   font-size: 28px;
   font-weight: 300;
-  color: var(--text-color);
+  color: var(--navbar-text-color);
   text-align: justify;
 }
 
@@ -639,8 +673,136 @@ body {
 /*Valenin Position*/
 
 #containerfluid6 {
-  background-color: var(--accent-color);
-  padding: 30px;
+  background-color: var(--bg-color);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
 
-  width: 1920px;
+
+#layout6 {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  
+}
+#title6{
+  display: flex;
+  justify-content: center;
+}
+#title6 img{
+  width: 40%;
+  height: auto;
+}
+
+#wrapperPos{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+  height: 100%;
+}
+
+#leftWrapPos{
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin:0;
+}
+
+
+/** Card left side**/
+#layout6 #wrapperPos #leftWrapPos .card {
+  height: auto;
+  width: 100%;
+  border-radius: 10px;
+  filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.5));
+  padding-top: 10px;
+}
+
+#layout6 #wrapperPos #leftWrapPos .card img {
+  width: 70%; /* Adjust the width as needed */
+  height: 100%; /* Keep height equal to width for a perfect circle */
+  object-fit: cover; /* Ensures the image doesn't get distorted */
+  border-radius: 50%;
+  margin: 0 auto;
+  border: #201c1c solid 2px;
+
+}
+
+#layout6 #title6 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#layout6 #wrapperPos #leftWrapPos .card-body {
+  text-align: center;
+  width: 100%;
+  height:130px;
+  display: flex;
+  
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+
+#rightWrapPos {
+  width: 65%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  max-height: 600px;
+  overflow-y: auto;
+  padding: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+#rightWrapPos .card {
+  width: 100%;
+  border-radius: 10px;
+  padding-top: 10px;
+  text-align: center;
+}
+
+#rightWrapPos .card img {
+  width: 70%;
+  height: auto;
+
+  max-height: 150px;
+  object-fit: fill;
+  border-radius: 50%;
+  margin: 0 auto;
+  border: #201c1c solid 2px;
+  
+}
+
+#rightWrapPos .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#rightWrapPos::-webkit-scrollbar {
+  width: 8px;
+}
+
+#rightWrapPos::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+#rightWrapPos::-webkit-scrollbar-thumb {
+  background-color: red;
+  border-radius: 4px;
+}
+
+#rightWrapPos::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
