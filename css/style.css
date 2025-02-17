@@ -335,6 +335,8 @@ body {
   padding: 30px;
   height: auto;
   width: 100%;
+  margin: 0;
+ 
 }
 #layout3 {
   width: 100%;
@@ -717,92 +719,102 @@ body {
 }
 
 
-/** Card left side**/
-#layout6 #wrapperPos #leftWrapPos .card {
-  height: auto;
-  width: 100%;
-  border-radius: 10px;
-  filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.5));
-  padding-top: 10px;
-}
-
-#layout6 #wrapperPos #leftWrapPos .card img {
-  width: 70%; /* Adjust the width as needed */
-  height: 100%; /* Keep height equal to width for a perfect circle */
-  object-fit: cover; /* Ensures the image doesn't get distorted */
-  border-radius: 50%;
-  margin: 0 auto;
-  border: #201c1c solid 2px;
-
-}
-
-#layout6 #title6 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-#layout6 #wrapperPos #leftWrapPos .card-body {
-  text-align: center;
-  width: 100%;
-  height:130px;
+/**Valenin **/
+#section6{
   display: flex;
-  
-  justify-content: center;
-  flex-direction: column;
-  margin: 0 auto;
+  justify-content: left;
+  padding: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #4bbb8a;
+  height: auto;
+}
+
+#section6 h1{
+  margin-top: 30px;
 }
 
 
-#rightWrapPos {
-  width: 65%;
+
+.bodyContainer{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
-  max-height: 600px;
-  overflow-y: auto;
-  padding: 10px;
-  scrollbar-width: thin;
-  scrollbar-color: #888 #f1f1f1;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 4rem 10rem;
 }
-
-#rightWrapPos .card {
+.bodyContainer .member{
+  max-width: 300px;
+  margin: auto;
+  margin-bottom: 4rem;
+  cursor: pointer;
+  position: relative;
+}
+.member img{
   width: 100%;
-  border-radius: 10px;
-  padding-top: 10px;
-  text-align: center;
 }
-
-#rightWrapPos .card img {
-  width: 70%;
-  height: auto;
-
-  max-height: 150px;
-  object-fit: fill;
-  border-radius: 50%;
-  margin: 0 auto;
-  border: #201c1c solid 2px;
+@media screen and (min-width: 769px) {
   
+  .member:nth-child(3n + 2){
+      margin-bottom: 0;
+      margin-top: 5rem;
+  }
+}
+.member:first-child:after{
+  content: 'Product owner';
+  padding-bottom: 1rem;
+}
+.member:nth-child(2)::after{
+  content: 'Art director';
+}
+.member:nth-child(3)::after{
+  content: 'Tech Lead';
+}
+.member:nth-child(4)::after{
+  content: 'UX Designer';
+}
+.member:nth-child(5)::after,.member:nth-child(6)::after {
+  content: 'Developper';
+}
+.member::after{
+  color: black;
+  font-family: 'PT Serif', serif;
+  position: absolute;
+  right: -4rem;
+  top: 3rem;
+  transform: rotate(90deg);
+
+}
+.footer{
+  width: 100%;
+  text-align: center;
+  color: #A9A9A9;
+
+}
+.footer a{
+  color: #555;
 }
 
-#rightWrapPos .card-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-#rightWrapPos::-webkit-scrollbar {
-  width: 8px;
-}
-
-#rightWrapPos::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-#rightWrapPos::-webkit-scrollbar-thumb {
-  background-color: red;
-  border-radius: 4px;
-}
-
-#rightWrapPos::-webkit-scrollbar-thumb:hover {
-  background: #555;
+@media screen and (max-width: 768px) {
+  .header{
+      flex-direction: column;
+      gap: 2rem;
+      align-items: flex-start;
+  }
+  .who-we-are{
+      width: 90%;
+  
+  }
+  .bodyContainer{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      width: 85%;
+      padding: 4rem 0;
+      margin: auto;
+      /* margin-right: ; */
+  }
+  .member:nth-child(2n + 2){
+      margin-bottom: 0;
+      margin-top: 5rem;
+  }
 }
