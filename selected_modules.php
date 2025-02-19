@@ -20,7 +20,7 @@ if (isset($_GET['module'])) {
     }
 
     // Fetch the different versions of the selected module
-    $versions_stmt = $conn->prepare("SELECT * FROM module_versions WHERE module_id = ?");
+    $versions_stmt = $conn->prepare("SELECT * FROM selectedmodules WHERE module_id = ?");
     $versions_stmt->bind_param("i", $module['module_id']);
     $versions_stmt->execute();
     $versions_result = $versions_stmt->get_result();
@@ -37,10 +37,10 @@ if (isset($_GET['module'])) {
 // Handling form submission for selecting a version
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $selected_module_id = $_POST['module_id'];
-    $selected_version_id = $_POST['version_id'];
+    $selected_version_id = $_POST['selected_id']; // Fix: Use `selected_id` instead of `version_id`
 
     // Check if the selected version matches the selected module
-    $stmt = $conn->prepare("SELECT * FROM module_versions WHERE version_id = ? AND module_id = ?");
+    $stmt = $conn->prepare("SELECT * FROM selectedmodules WHERE selected_id = ? AND module_id = ?");
     $stmt->bind_param("ii", $selected_version_id, $selected_module_id);
     $stmt->execute();
     $version_result = $stmt->get_result();
@@ -49,7 +49,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Version exists for the selected module
         $selected_version = $version_result->fetch_assoc();
         echo "You have selected version: " . htmlspecialchars($selected_version['version_name']);
-        // Redirect or take other actions as needed
     } else {
         echo "Invalid version selected for this module.";
     }
@@ -62,7 +61,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title><?php echo htmlspecialchars($module['modulename']); ?> - Documentation</title>
-
   <link rel="icon" href="img/image.png" type="image/x-icon" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/documentationStyle.css" />
@@ -98,14 +96,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="card mt-3">
               <div class="card-body">
                 <h5 class="card-title">Version: <?php echo htmlspecialchars($version['version_name']); ?></h5>
-                <p class="card-text"><?php echo htmlspecialchars($version['version_description']); ?></p>
+                <p class="card-text"><?php echo htmlspecialchars($version['description']); ?></p>
 
                 <form action="selected_modules.php" method="POST">
                   <input type="hidden" name="module_id" value="<?php echo $module['module_id']; ?>">
-                  <input type="hidden" name="modulename" value="<?php echo htmlspecialchars($module['modulename']); ?>">
-                  <input type="hidden" name="description" value="<?php echo htmlspecialchars($module['description']); ?>">
-                  <input type="hidden" name="version_id" value="<?php echo $version['version_id']; ?>">
-                  <button type="submit" class="btnView">Select Version</button>
+                  <input type="hidden" name="selected_id" value="<?php echo $version['selected_id']; ?>"> <!-- Fix: Corrected field -->
+                  <button type="submit" class="btn btn-primary">Select Version</button>
                 </form>
               </div>
             </div>
