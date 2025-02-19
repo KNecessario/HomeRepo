@@ -326,10 +326,6 @@ body {
 
 }
 
-
-
-
-
 /* Who we are */
 #containerfluid3 {
   padding: 30px;
@@ -363,10 +359,13 @@ body {
 
 #wrapper1 {
   width: 100%;
+    
   display: flex;
   flex-direction: row;
   align-items: center;
   height: auto;
+  background-color: #4bbb8a;
+  
 }
 
 #wrapper1 #leftWrap {

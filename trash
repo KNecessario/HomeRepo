@@ -1,3 +1,49 @@
+<?php
+// selected_modules.php
+session_start();
+include("php/connection.php");
+
+// Check if a module is selected
+if (isset($_GET['module'])) {
+    $module_name = urldecode($_GET['module']);
+
+    // Fetch module details from the database
+    $stmt = $conn->prepare("SELECT * FROM modules WHERE modulename = ?");
+    $stmt->bind_param("s", $module_name);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $module = $result->fetch_assoc();
+} else {
+    echo "No module selected.";
+    exit();
+}
+?>
+
+<title><?php echo htmlspecialchars($module_name); ?> - Documentation</title>
+
+ <nav class="navbar navbar-expand-lg d-flex justify-content-between">
+  <a class="navbar-brand" href="documentation.php">
+    <img src="image/logo.png" alt="logo">
+  </a>
+  <div class="collapse navbar-collapse w-100" id="navbarNav">
+    <ul class="nav nav-pills nav-fill">
+      <li class="nav-item"><a class="nav-link" href="documentation.php">Back to Modules</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<section class="container">
+  <h1 class="my-4"><?php echo htmlspecialchars($module['modulename']); ?></h1>
+  <p><?php echo htmlspecialchars($module['description']); ?></p>
+</section>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  <!--Valenin Position-->
     <section class="container-fluid" id="containerfluid6">
       <div class="container" id="layout6">
