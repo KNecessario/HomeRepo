@@ -1,0 +1,233 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+/* variables */
+:root {
+  --bg-color: #fafafb;
+  --primary-color: #342d3e;
+  --secondary-color: #708498;
+  --text-color: #342d3e;
+  --navbar-text-color: #fafafb;
+  --accent-color: #4bbb8a;
+  --bg-secondary: #677776;
+  --bg-black: #201c1c;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--bg-color);
+  font-family: "Roboto Slab", serif;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Montserrat", sans-serif;
+  padding: 10px 50px;
+  font-weight: 600;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  padding-bottom: 10px;
+}
+
+.navbar ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+.navbar ul li {
+  margin-right: 20px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: var(--navbar-text-color);
+  position: relative;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+  color: var(--accent-color);
+}
+
+.nav-pills .nav-link.active {
+  background-color: transparent; /* Change to your preferred color */
+  color: var(--accent-color) !important;
+}
+.navbar img {
+  width: 166px;
+  height: 29px;
+}
+
+.navbar ul li a.active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-color);
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  color: #4bbb8a;
+}
+.navbar-toggler {
+  color: #fafafb;
+  background-color: var(--navbar-text-color);
+}
+/* Section Styles */
+
+.btnContact {
+  padding: 5px;
+  width: 150px;
+  border-radius: 10px;
+  background-color: var(--accent-color);
+  color: #fafafb;
+}
+
+.btnContact:hover {
+  transform: scale(1.1);
+  transition: transform 0.5s;
+  background: var(--bg-black);
+  color: var(--navbar-text-color);
+}
+
+@media screen and (max-width: 992px) {
+  .btnContact {
+    display: none;
+  }
+}
+/**Main Container */
+
+.container-fluid {
+  padding: 0;
+  margin: 0;
+}
+
+#containerfluid1 {
+  margin-top: 50px;
+  width: 100%;
+  height: auto;
+}
+#layout1 {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#sub1{
+  width: 80%;
+}
+#layout1 h1 {
+  text-align: center;
+  margin-top: 30px;
+  color: var(--text-color);
+
+}
+#layout1 #textSub {
+  text-align: center;
+  margin-top: 10px;
+  color: var(--text-color);
+}
+
+/* Wrapper for card layout */
+/* Wrapper for card layout */
+#wrapper1 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 20px;
+}
+
+/* Card styling */
+#wrapper1 .card {
+  color: var(--bg-color);
+  width: 100%; /* Adjust to fit grid */
+  max-width: 360px; /* Ensures it doesn't get too large */
+  margin: auto; /* Centers the card */
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensures all cards have equal height */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Header section */
+.card-header {
+  background-color: var(--primary-color); /* Dark background */
+  color: white;
+  padding: 16px;
+  border-radius: 12px 12px 0 0; /* Rounded corners for the top */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Title in header */
+.card-header h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Date in header */
+.release-date {
+  font-size: 0.875rem;
+  color: var(--navbar-text-color); /* Light gray */
+  font-style: italic;
+  margin: 0;
+  padding-top: 5px;
+}
+
+/* Body section */
+.card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures content is spaced out */
+  flex-grow: 1; /* Makes sure the body takes up remaining space */
+  background-color: var(--navbar-text-color);
+}
+
+/* Description text */
+.description {
+  color: var(--text-color); /* Dark gray */
+  flex-grow: 1; /* Makes the description take up available space */
+  overflow: hidden;
+  display: -webkit-box;
+  line-clamp: 2; /* Limit the description to 2 lines */
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis; /* Adds "..." if text is too long */
+  height: 3em; /* Sets a fixed height to fit 2 lines */
+}
+
+/* Button style */
+.view-btn {
+  width: 100%;
+  background-color: #4BBB8A; /* Green background */
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none; /* Removes default border */
+  margin-top: auto; /* Ensures the button stays at the bottom */
+}
+
+/* Button hover effect */
+.view-btn:hover {
+  background-color: #43A57A; /* Slightly darker green */
+}
