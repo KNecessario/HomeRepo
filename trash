@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- Displaying the module details -->
 <div class="card">
   <div class="card-body">
@@ -6,6 +7,8 @@
   </div>
 </div>
 
+=======
+>>>>>>> e18cb5c9ff69a39a82024c96cc96d6b3484053fb
 <?php
 // selected_modules.php
 session_start();
@@ -13,6 +16,7 @@ include("php/connection.php");
 
 // Check if a module is selected
 if (isset($_GET['module'])) {
+<<<<<<< HEAD
   $module_name = urldecode($_GET['module']);
 
   // Fetch module details from the database
@@ -24,12 +28,29 @@ if (isset($_GET['module'])) {
 } else {
   echo "No module selected.";
   exit();
+=======
+    $module_name = urldecode($_GET['module']);
+
+    // Fetch module details from the database
+    $stmt = $conn->prepare("SELECT * FROM modules WHERE modulename = ?");
+    $stmt->bind_param("s", $module_name);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $module = $result->fetch_assoc();
+} else {
+    echo "No module selected.";
+    exit();
+>>>>>>> e18cb5c9ff69a39a82024c96cc96d6b3484053fb
 }
 ?>
 
 <title><?php echo htmlspecialchars($module_name); ?> - Documentation</title>
 
+<<<<<<< HEAD
 <nav class="navbar navbar-expand-lg d-flex justify-content-between">
+=======
+ <nav class="navbar navbar-expand-lg d-flex justify-content-between">
+>>>>>>> e18cb5c9ff69a39a82024c96cc96d6b3484053fb
   <a class="navbar-brand" href="documentation.php">
     <img src="image/logo.png" alt="logo">
   </a>
@@ -45,6 +66,7 @@ if (isset($_GET['module'])) {
   <h1 class="my-4"><?php echo htmlspecialchars($module['modulename']); ?></h1>
   <p><?php echo htmlspecialchars($module['description']); ?></p>
 </section>
+<<<<<<< HEAD
 
 
 
@@ -167,11 +189,145 @@ if (isset($_GET['module'])) {
     </div>
   </div>
 </section>
+=======
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <!--Valenin Position-->
+    <section class="container-fluid" id="containerfluid6">
+      <div class="container" id="layout6">
+        <div class="container" id="title6">
+          <img src="image/ValeninLogo.png" alt="Valenin Logo" />
+        </div>
+        <div class="container" id="wrapperPos">
+          <div class="container" id="leftWrapPos">
+            <!--Card -->
+            <div class="card">
+              <img
+                src="image/Valenin/MaychellAlcorin.png"
+                class="card-img-top"
+                alt="Maychell Alcorin"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Maychell Alcorin</h5>
+                <p class="card-text">CEO & Founder</p>
+              </div>
+            </div>
+          </div>
+          <!--Right side-->
+          <div class="container" id="rightWrapPos">
+            <!-- Repeat this card structure up to 7 times -->
+            <div class="card">
+              <img
+                src="image/Valenin/AinaMae.png"
+                class="card-img-top"
+                alt="Person 1"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Aina Mae Arroyo</h5>
+                <p class="card-text">QA & Frontline Support</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img
+                src="image/Valenin/JenealleMae.png"
+                class="card-img-top"
+                alt="Person 2"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Jenealle Mae Jimena</h5>
+                <p class="card-text">Executive Assistant & UI/UX Designer</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img
+                src="image/Valenin/KarloEstano.png"
+                class="card-img-top"
+                alt="Person 3"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Karlo Estano</h5>
+                <p class="card-text">Web Developer</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img
+                src="image/Valenin/PaoloVien.png"
+                class="card-img-top"
+                alt="Person 3"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Paolo Vien kier R. Patton</h5>
+                <p class="card-text">Web Developer</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img
+                src="image/Valenin/MaryDorothy.png"
+                class="card-img-top"
+                alt="Person 3"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Mary Dorothy Joy Taala</h5>
+                <p class="card-text">DevOps</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img
+                src="image/Valenin/Jose.png"
+                class="card-img-top"
+                alt="Person 3"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Jose Phernando Lamud</h5>
+                <p class="card-text">System Support Analyst</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img
+                src="image/Valenin/Jennifer.png"
+                class="card-img-top"
+                alt="Person 3"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Jennifer Sabado</h5>
+                <p class="card-text">QA & Developer</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img
+                src="image/Valenin/Vesanie.png"
+                class="card-img-top"
+                alt="Person 3"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Vesanie Marie Bernal</h5>
+                <p class="card-text">Quality Assurance</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+>>>>>>> e18cb5c9ff69a39a82024c96cc96d6b3484053fb
 
 
 /** css Valenin Position */
 
 #containerfluid6 {
+<<<<<<< HEAD
 background-color: var(--bg-color);
 width: 100%;
 display: flex;
@@ -305,3 +461,140 @@ border-radius: 4px;
 #rightWrapPos::-webkit-scrollbar-thumb:hover {
 background: #555;
 }
+=======
+    background-color: var(--bg-color);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  #layout6 {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    
+  }
+  #title6{
+    display: flex;
+    justify-content: center;
+  }
+  #title6 img{
+    width: 40%;
+    height: auto;
+  }
+  
+  #wrapperPos{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    height: 100%;
+  }
+  
+  #leftWrapPos{
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin:0;
+  }
+  
+  
+  /** Card left side**/
+  #layout6 #wrapperPos #leftWrapPos .card {
+    height: auto;
+    width: 100%;
+    border-radius: 10px;
+    filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.5));
+    padding-top: 10px;
+  }
+  
+  #layout6 #wrapperPos #leftWrapPos .card img {
+    width: 70%; /* Adjust the width as needed */
+    height: 100%; /* Keep height equal to width for a perfect circle */
+    object-fit: cover; /* Ensures the image doesn't get distorted */
+    border-radius: 50%;
+    margin: 0 auto;
+    border: #201c1c solid 2px;
+  
+  }
+  
+  #layout6 #title6 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  #layout6 #wrapperPos #leftWrapPos .card-body {
+    text-align: center;
+    width: 100%;
+    height:130px;
+    display: flex;
+    
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  
+  
+  #rightWrapPos {
+    width: 65%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    max-height: 600px;
+    overflow-y: auto;
+    padding: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+  }
+  
+  #rightWrapPos .card {
+    width: 100%;
+    border-radius: 10px;
+    padding-top: 10px;
+    text-align: center;
+  }
+  
+  #rightWrapPos .card img {
+    width: 70%;
+    height: auto;
+  
+    max-height: 150px;
+    object-fit: fill;
+    border-radius: 50%;
+    margin: 0 auto;
+    border: #201c1c solid 2px;
+    
+  }
+  
+  #rightWrapPos .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  #rightWrapPos::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  #rightWrapPos::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  #rightWrapPos::-webkit-scrollbar-thumb {
+    background-color: red;
+    border-radius: 4px;
+  }
+  
+  #rightWrapPos::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
+  
+>>>>>>> e18cb5c9ff69a39a82024c96cc96d6b3484053fb

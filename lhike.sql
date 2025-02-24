@@ -56,6 +56,7 @@ INSERT INTO `selectedmodules` (`module_id`, `version_name`, `description`, `rele
 (3, 'DTR 1', 'Initial device test report, includes basic device tests', '2023-03-10'),
 (3, 'DTR 2', 'Updated test report, includes additional device tests and fixes', '2023-04-10');
 
+
 -- Insert sample data into `releaseNotes`
 INSERT INTO releaseNotes (`releasenote_name`, `description`, `note_release_date`) 
 VALUES
