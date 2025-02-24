@@ -53,7 +53,7 @@ $result = $conn->query($sql);
       <div class="mx-auto d-flex justify-content-center">
         <ul class="nav nav-pills nav-fill">
           <li class="nav-item">
-<<<<<<< HEAD
+
             <a class="nav-link" href="index.php">Home</a>
           </li>
           <li class="nav-item">
@@ -64,7 +64,7 @@ $result = $conn->query($sql);
           </li>
           <li class="nav-item">
             <a class="nav-link" href="documentation.php">Documentation</a>
-=======
+
             <a class="nav-link" href="#containerfluid1">Home</a>
           </li>
           <li class="nav-item">
@@ -75,7 +75,7 @@ $result = $conn->query($sql);
           </li>
           <li class="nav-item">
             <a class="nav-link" href="documentation.html">Documentation</a>
->>>>>>> e18cb5c9ff69a39a82024c96cc96d6b3484053fb
+
           </li>
         </ul>
       </div>
@@ -96,7 +96,7 @@ $result = $conn->query($sql);
                 <p class="card-text"><?php echo htmlspecialchars($row['description']); ?></p>
                 <!-- You can add additional dynamic content, for example, a date or link -->
                  <!-- Selection Form -->
-<<<<<<< HEAD
+
               </div>
               <div class="container-fluid p-0 m-0" id="divbutton">
                 <form action="select_module.php" method="POST">
@@ -107,7 +107,7 @@ $result = $conn->query($sql);
                 </form>
               </div>
               
-=======
+
                  <form action="select_module.php" method="POST">
                             <input type="hidden" name="module_id" value="<?php echo $row['module_id']; ?>">
                             <input type="hidden" name="modulename" value="<?php echo htmlspecialchars($row['modulename']); ?>">
@@ -115,7 +115,6 @@ $result = $conn->query($sql);
                             <button type="submit" class="btnView">Select</button>
                  </form>
               </div>
->>>>>>> e18cb5c9ff69a39a82024c96cc96d6b3484053fb
             </div>
           <?php endwhile; ?>
         <?php else: ?>
