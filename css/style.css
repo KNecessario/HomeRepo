@@ -201,6 +201,7 @@ body {
   background-color: var(--primary-color);
   padding: 30px;
   height: auto;
+  min-height: 100vh;
 }
 
 #layout2 {
@@ -327,75 +328,79 @@ body {
 }
 
 /* Who we are */
+/* General Section Styling */
 #containerfluid3 {
-  padding: 30px;
-  height: auto;
-  width: 100%;
-  
+  background-color: var(--background-color);
+  padding: 60px 0;
 }
+
 #layout3 {
   width: 100%;
   display: flex;
   flex-direction: column;
-  width: 100%;
-}
-#layout3 #whatwebelieve {
-  width: 100%;
-}
-
-#layout3 #whatwebelieve h5 {
-  font-size: 20px;
-  color: var(--primary-color);
-  text-align: center;
-}
-#layout3 #subwhatwebelieve {
-  width: 70%;
-}
-#layout3 #subwhatwebelieve h4 {
-  color: var(--text-color);
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-#wrapper1 {
-  width: 100%;
-    
-  display: flex;
-  flex-direction: row;
   align-items: center;
-  height: auto;
-  background-color: #4bbb8a;
   
 }
 
-#wrapper1 #leftWrap {
-  width: 50%;
-  height: auto;
+/* Section Title */
+#containerTitle {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+#containerTitle h5 {
+  color: var(--text-color);
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#containerTitle h3 {
+  color: var(--text-color);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Content Wrappers */
+#wrapper1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   
 }
-#wrapper1 #leftWrap h1 {
-  font-size: 60px;
+
+/* Left Content */
+#leftWrap {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 55%;
+}
+#leftWrap h1 {
+  font-size: 48px;
   color: var(--text-color);
   margin-bottom: 20px;
 }
-#wrapper1 #leftWrap p {
+
+#leftWrap h5 {
   font-size: 28px;
   font-weight: 300;
   color: var(--text-color);
   text-align: justify;
-  padding: 10px;
 }
 
-#wrapper1 #rightWrap {
-  width: 50%;
+/* Right Content (Image) */
+#rightWrap {
+  padding: 20px;
+  width: 40%;
   display: flex;
   justify-content: center;
-  
+  padding: 20px;
 }
-
-#wrapper1 #rightWrap img {
-  width: 100%;
+#rightWrap img {
+  max-width: 100%;
   height: auto;
+  max-width: 500px;
 }
 
 /* Responsive Design */
@@ -405,53 +410,57 @@ body {
     text-align: center;
   }
 
-  #wrapper1 #leftWrap,
-  #wrapper1 #rightWrap {
-    width: 100%;
+  #leftWrap,
+  #rightWrap {
+    width: 95%;
   }
 
-  #wrapper1 #leftWrap h1 {
-    font-size: 36px;
+  #leftWrap h1 {
+    font-size: 40px;
+    text-align: center;
   }
 
-  #wrapper1 #leftWrap p {
+
+  #leftWrap h5 {
     font-size: 18px;
+    line-height: normal;
   }
 
-  #wrapper1 #rightWrap img {
-    width: 300px;
+  #rightWrap img {
+    max-width: 350px;
+    display: none;
   }
 }
 
 @media (max-width: 768px) {
-  #layout3 #subwhatwebelieve {
-    width: 90%;
+  #leftWrap h1 {
+    font-size: 36px;
   }
 
-  #wrapper1 #leftWrap h1 {
-    font-size: 32px;
+  #leftWrap h5 {
+    font-size: 15px;
   }
 
-  #wrapper1 #leftWrap p {
-    font-size: 16px;
+  #rightWrap img {
+    max-width: 300px;
   }
 }
 
 @media (max-width: 480px) {
-  #wrapper1 {
-    padding: 10px;
+  #containerfluid3 {
+    padding: 40px 10px;
   }
 
-  #wrapper1 #leftWrap h1 {
-    font-size: 28px;
+  #leftWrap h1 {
+    font-size: 32px;
   }
 
-  #wrapper1 #leftWrap p {
+  #leftWrap h5 {
     font-size: 14px;
   }
 
-  #wrapper1 #rightWrap img {
-    width: 250px;
+  #rightWrap img {
+    max-width: 250px;
   }
 }
 
@@ -463,13 +472,14 @@ body {
   justify-content: center;
   align-items: center;
   height: auto;
+  min-height: 100vh;
   width: 100%;
 }
 #layout4 {
   width: 100%;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  height: auto;
 }
 
 #wrapper2 {
@@ -478,6 +488,7 @@ body {
   flex-direction: row;
   align-items: center;
   gap: 40px;
+  height: auto;
 }
 
 #rightWrapMission {
@@ -962,18 +973,22 @@ body {
   padding: 20px;
   background-color: var(--bg-secondary);
   border-radius: 10px;
+  max-width: 400px;
+  width: 80%;
+  margin: 0 auto;
+  height: 150px;
 }
 
 .newsletter-section h3 {
   font-size: 24px;
   margin-bottom: 10px;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 .newsletter-section input {
   padding: 12px 20px;
   width: 80%;
-  max-width: 400px;
+  max-width: 200px;
   border: none;
   border-radius: 4px;
   font-size: 16px;
@@ -986,10 +1001,11 @@ body {
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
+  background-color: var(--accent-color);
 }
 
 .newsletter-section button:hover {
-  background-color: darkgreen;
+  background-color: #43A57A;
 }
 
 /* Responsive Design */

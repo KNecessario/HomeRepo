@@ -67,23 +67,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="https://fontawesome.com/icons/location-dot?f=classic&s=solid" />
 
 </head>
 
 <body>
   <!--nav bar-->
-  
   </head>
 
   <body>
     <!-- Navbar -->
-    
+
+    <!--nav bar-->
     <nav class="navbar navbar-expand-lg d-flex justify-content-between">
       <a class="navbar-brand" href="#">
         <img src="image/logo.png" alt="logo" />
       </a>
-
 
       <button
         class="navbar-toggler"
@@ -116,62 +116,49 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </div>
 
       <button class="btnContact">Contact Us</button>
-
     </nav>
 
     <section class="container-fluid p-0" id="container1">
       <div class="container-lg p-0" id="main1">
+
         <div class="container" id="containerBack">
           <a href="documentation.php"><img src="image/icon/back.svg" alt="" id="img1"></a>
-          <h1 class="my-4"><?php echo htmlspecialchars($module['modulename']); ?></h1>
+          <h1 class="my-4"><?php echo htmlspecialchars($module['modulename']); ?> Documentation</h1>
         </div>
+
+
+
         <div class="container-fluid" id="divWrapper">
 
 
-          <h1 class="my-4"><?php echo htmlspecialchars($module['modulename']); ?> Documentation</h1>
-          <div class="container-fluid" id="divWrapper">
 
-            <!-- Displaying the module details -->
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title"><?php echo htmlspecialchars($module['modulename']); ?></h5>
-                <p class="card-text"><?php echo htmlspecialchars($module['description']); ?></p>
-              </div>
-            </div>
 
-            
-            <!-- Display versions and handle version selection -->
-            <?php if (!empty($versions)): ?>
-              <?php foreach ($versions as $version): ?>
-                <div class="card mt-3">
-                  <div class="card-body">
-                    <h5 class="card-title">Version: <?php echo htmlspecialchars($version['version_name']); ?></h5>
-                    <p class="card-text"><?php echo htmlspecialchars($version['description']); ?></p>
-
-                      </div>
-                      <div class="container-fluid p-0 m-0" id="divbutton">
-                        <form action="select_module.php" method="POST">
-                          <input type="hidden" name="module_id" value="<?php echo $row['module_id']; ?>">
-                          <input type="hidden" name="modulename" value="<?php echo htmlspecialchars($row['modulename']); ?>">
-                          <input type="hidden" name="description" value="<?php echo htmlspecialchars($row['description']); ?>">
-                          <button type="submit" class="btnView">View</button>
-                          
-
-                          <form action="selected_modules.php" method="POST">
-                            <input type="hidden" name="module_id" value="<?php echo $module['module_id']; ?>">
-                            <input type="hidden" name="selected_id" value="<?php echo $version['selected_id']; ?>"> <!-- Fix: Corrected field -->
-                            <button type="submit" class="btn btn-primary">Select Version</button>
-                            >>>>>>> e18cb5c9ff69a39a82024c96cc96d6b3484053fb
-                          </form>
-                      </div>
-                  </div>
-                <?php endforeach; ?>
-              <?php else: ?>
-                <p>No versions available for this module.</p>
-              <?php endif; ?>
+          <!-- Display versions and handle version selection -->
+          <?php if (!empty($versions)): ?>
+            <?php foreach ($versions as $version): ?>
+              <div class="card mt-3">
+                <div class="card-body">
+                  <h5 class="card-title">Version: <?php echo htmlspecialchars($version['version_name']); ?></h5>
+                  <p class="card-text"><?php echo htmlspecialchars($version['description']); ?></p>
 
                 </div>
-          </div>
+                <div class="container-fluid p-0 m-0" id="divbutton">
+                  <form action="select_module.php" method="POST">
+                    <input type="hidden" name="module_id" value="<?php echo $row['module_id']; ?>">
+                    <input type="hidden" name="modulename" value="<?php echo htmlspecialchars($row['modulename']); ?>">
+                    <input type="hidden" name="description" value="<?php echo htmlspecialchars($row['description']); ?>">
+                    <button type="submit" class="btnView">View</button>
+
+
+                </div>
+              </div>
+            <?php endforeach; ?>
+          <?php else: ?>
+            <p>No versions available for this module.</p>
+          <?php endif; ?>
+
+        </div>
+      </div>
     </section>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

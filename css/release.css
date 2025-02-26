@@ -1,9 +1,11 @@
+/* Global Styles */
 * {
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
-/* variables */
+
+/* Variables */
 :root {
   --bg-color: #fafafb;
   --primary-color: #342d3e;
@@ -16,9 +18,8 @@
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
-  background-color: var(--bg-color);
   font-family: "Roboto Slab", serif;
+  background-color: var(--bg-color);
 }
 
 /* Navbar */
@@ -27,7 +28,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: "Montserrat", sans-serif;
   padding: 10px 50px;
   font-weight: 600;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
@@ -36,12 +36,10 @@ body {
   z-index: 100;
   top: 0;
   left: 0;
-  padding-bottom: 10px;
 }
 
 .navbar ul {
   display: flex;
-  flex-direction: row;
   list-style: none;
 }
 
@@ -61,9 +59,10 @@ body {
 }
 
 .nav-pills .nav-link.active {
-  background-color: transparent; /* Change to your preferred color */
+  background-color: transparent;
   color: var(--accent-color) !important;
 }
+
 .navbar img {
   width: 166px;
   height: 29px;
@@ -78,14 +77,13 @@ body {
   position: absolute;
   bottom: -5px;
   left: 0;
-  color: #4bbb8a;
 }
+
 .navbar-toggler {
-  color: #fafafb;
   background-color: var(--navbar-text-color);
 }
-/* Section Styles */
 
+/* Contact Button */
 .btnContact {
   padding: 5px;
   width: 150px;
@@ -106,8 +104,8 @@ body {
     display: none;
   }
 }
-/**Main Container */
 
+/* Main Container */
 .container-fluid {
   padding: 0;
   margin: 0;
@@ -116,106 +114,97 @@ body {
 #containerfluid1 {
   margin-top: 50px;
   width: 100%;
-  height: auto;
 }
+
 #layout1 {
   width: 100%;
-  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-#sub1{
+
+#sub1 {
   width: 80%;
 }
+
 #layout1 h1 {
   text-align: center;
   margin-top: 30px;
   color: var(--text-color);
-
 }
+
 #layout1 #textSub {
   text-align: center;
   margin-top: 10px;
   color: var(--text-color);
 }
 
-/* Wrapper for card layout */
-/* Wrapper for card layout */
+/* Release Notes Grid */
 #wrapper1 {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
   padding: 20px;
+  height: auto;
 }
 
-/* Card styling */
 #wrapper1 .card {
   color: var(--bg-color);
-  width: 100%; /* Adjust to fit grid */
-  max-width: 360px; /* Ensures it doesn't get too large */
-  margin: auto; /* Centers the card */
+  height: 100%; /* Ensures all cards are of equal height */
+  width: 100%;
+  max-width: 360px;
+  margin: auto;
   display: flex;
   flex-direction: column;
-  height: 100%; /* Ensures all cards have equal height */
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-/* Header section */
 .card-header {
-  background-color: var(--primary-color); /* Dark background */
+  background-color: #342D3E;
   color: white;
   padding: 16px;
-  border-radius: 12px 12px 0 0; /* Rounded corners for the top */
+  border-radius: 12px 12px 0 0;
   display: flex;
   flex-direction: column;
 }
 
-/* Title in header */
 .card-header h3 {
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0;
 }
 
-/* Date in header */
 .release-date {
   font-size: 0.875rem;
-  color: var(--navbar-text-color); /* Light gray */
+  color: var(--navbar-text-color);
   font-style: italic;
   margin: 0;
   padding-top: 5px;
 }
 
-/* Body section */
 .card-body {
   padding: 24px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Ensures content is spaced out */
-  flex-grow: 1; /* Makes sure the body takes up remaining space */
+  justify-content: space-between;
+  flex-grow: 1; /* Ensures content stretches to fill the card */
   background-color: var(--navbar-text-color);
 }
 
-/* Description text */
 .description {
-  color: var(--text-color); /* Dark gray */
-  flex-grow: 1; /* Makes the description take up available space */
-  overflow: hidden;
+  color: var(--text-color);
+  margin-bottom: 16px;
   display: -webkit-box;
-  line-clamp: 2; /* Limit the description to 2 lines */
+  line-clamp: 2; /* Limits text to 2 lines */
   -webkit-box-orient: vertical;
-  text-overflow: ellipsis; /* Adds "..." if text is too long */
-  height: 3em; /* Sets a fixed height to fit 2 lines */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* Button style */
+/* Ensures button stays at the bottom */
 .view-btn {
   width: 100%;
-  background-color: #4BBB8A; /* Green background */
+  background-color: #4BBB8A;
   color: white;
   padding: 12px;
   border-radius: 8px;
@@ -223,11 +212,10 @@ body {
   text-align: center;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  border: none; /* Removes default border */
-  margin-top: auto; /* Ensures the button stays at the bottom */
+  border: none;
+  margin-top: auto;
 }
 
-/* Button hover effect */
 .view-btn:hover {
-  background-color: #43A57A; /* Slightly darker green */
+  background-color: #43A57A;
 }

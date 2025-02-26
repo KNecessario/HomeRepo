@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <!-- Displaying the module details -->
 <div class="card">
   <div class="card-body">
@@ -7,8 +7,7 @@
   </div>
 </div>
 
-=======
->>>>>>> e18cb5c9ff69a39a82024c96cc96d6b3484053fb
+
 <?php
 // selected_modules.php
 session_start();
@@ -16,7 +15,7 @@ include("php/connection.php");
 
 // Check if a module is selected
 if (isset($_GET['module'])) {
-<<<<<<< HEAD
+
   $module_name = urldecode($_GET['module']);
 
   // Fetch module details from the database
@@ -28,7 +27,7 @@ if (isset($_GET['module'])) {
 } else {
   echo "No module selected.";
   exit();
-=======
+
     $module_name = urldecode($_GET['module']);
 
     // Fetch module details from the database
@@ -40,17 +39,17 @@ if (isset($_GET['module'])) {
 } else {
     echo "No module selected.";
     exit();
->>>>>>> e18cb5c9ff69a39a82024c96cc96d6b3484053fb
+
 }
 ?>
 
 <title><?php echo htmlspecialchars($module_name); ?> - Documentation</title>
 
-<<<<<<< HEAD
+
 <nav class="navbar navbar-expand-lg d-flex justify-content-between">
-=======
+
  <nav class="navbar navbar-expand-lg d-flex justify-content-between">
->>>>>>> e18cb5c9ff69a39a82024c96cc96d6b3484053fb
+
   <a class="navbar-brand" href="documentation.php">
     <img src="image/logo.png" alt="logo">
   </a>
@@ -66,11 +65,6 @@ if (isset($_GET['module'])) {
   <h1 class="my-4"><?php echo htmlspecialchars($module['modulename']); ?></h1>
   <p><?php echo htmlspecialchars($module['description']); ?></p>
 </section>
-<<<<<<< HEAD
-
-
-
-
 
 
 
@@ -107,7 +101,6 @@ if (isset($_GET['module'])) {
             <p class="card-text">QA & Frontline Support</p>
           </div>
         </div>
-
         <div class="card">
           <img
             src="image/Valenin/JenealleMae.png"
@@ -118,7 +111,6 @@ if (isset($_GET['module'])) {
             <p class="card-text">Executive Assistant & UI/UX Designer</p>
           </div>
         </div>
-
         <div class="card">
           <img
             src="image/Valenin/KarloEstano.png"
@@ -129,7 +121,6 @@ if (isset($_GET['module'])) {
             <p class="card-text">Web Developer</p>
           </div>
         </div>
-
         <div class="card">
           <img
             src="image/Valenin/PaoloVien.png"
@@ -140,7 +131,6 @@ if (isset($_GET['module'])) {
             <p class="card-text">Web Developer</p>
           </div>
         </div>
-
         <div class="card">
           <img
             src="image/Valenin/MaryDorothy.png"
@@ -321,13 +311,13 @@ if (isset($_GET['module'])) {
         </div>
       </div>
     </section>
->>>>>>> e18cb5c9ff69a39a82024c96cc96d6b3484053fb
+
 
 
 /** css Valenin Position */
 
 #containerfluid6 {
-<<<<<<< HEAD
+
 background-color: var(--bg-color);
 width: 100%;
 display: flex;
@@ -461,7 +451,7 @@ border-radius: 4px;
 #rightWrapPos::-webkit-scrollbar-thumb:hover {
 background: #555;
 }
-=======
+
     background-color: var(--bg-color);
     width: 100%;
     display: flex;
@@ -597,4 +587,4 @@ background: #555;
   }
   
   
->>>>>>> e18cb5c9ff69a39a82024c96cc96d6b3484053fb
+
