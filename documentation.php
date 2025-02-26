@@ -55,10 +55,10 @@ $result = $conn->query($sql);
       <div class="mx-auto d-flex justify-content-center">
         <ul class="nav nav-pills nav-fill">
           <li class="nav-item">
-            <a class="nav-link" href="#containerfluid1">Home</a>
+            <a class="nav-link" href="index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#containerfluid3">About</a>
+            <a class="nav-link" href="index.php">About</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="releasenote.php">Release Note</a>
