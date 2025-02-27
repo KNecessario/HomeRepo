@@ -32,8 +32,8 @@ $result = $conn->query($sql);
 
 <body>
 
- <!--nav bar-->
- <nav class="navbar navbar-expand-lg d-flex justify-content-between">
+  <!--nav bar-->
+  <nav class="navbar navbar-expand-lg d-flex justify-content-between">
     <a class="navbar-brand" href="#">
       <img src="image/logo.png" alt="logo" />
     </a>
@@ -75,11 +75,10 @@ $result = $conn->query($sql);
   <!-- Release Notes Section -->
   <section class="container-fluid " id="containerfluid1">
     <div class="container" id="layout1">
-      <h1 class="text-center mb-4">Release Notes</h1>
-      <p class="text-center" id="textSub">
-        The latest release of LHIKE ERP introduces major enhancements to various modules.
-        This update includes new features, bug fixes, and performance improvements.
-      </p>
+      <h1 class="text-center mb-4" id="titleID">Release Notes</h1>
+      <h3 class="text-center" id="textSub">
+        The latest release of LHIKE ERP introduces major enhancements to Logistics, Human Resources, Inventory, Kanban, and E-commerce modules. This update focuses on streamlining processes, boosting productivity, and delivering real-time insights for better decision-making. It includes new features, bug fixes, and performance improvements for a smoother user experience.
+      </h3>
 
       <div class="row g-4">
         <?php
@@ -88,7 +87,7 @@ $result = $conn->query($sql);
         ?>
             <div class="col-md-6 col-lg-4 col-xl-3">
               <div class="card shadow-sm">
-                <div class="card-header">
+                <div class="card-header" id="header1">
                   <h5 class="mb-0"><?php echo htmlspecialchars($row['releasenote_name']); ?></h5>
                   <p class="release-date mb-0"><?php echo date("F d, Y", strtotime($row['note_release_date'])); ?></p>
                 </div>
@@ -119,7 +118,7 @@ $result = $conn->query($sql);
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script>
-    
+
   </script>
 </body>
 

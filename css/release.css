@@ -1,11 +1,9 @@
-/* Global Styles */
 * {
-  padding: 0;
-  margin: 0;
+  padding: 0px;
+  margin: 0px;
   box-sizing: border-box;
 }
-
-/* Variables */
+/* variables */
 :root {
   --bg-color: #fafafb;
   --primary-color: #342d3e;
@@ -15,19 +13,25 @@
   --accent-color: #4bbb8a;
   --bg-secondary: #677776;
   --bg-black: #201c1c;
+  /** revision */
+  --color-violet:#342F40;
+  --color-green:#0D7C5F;
+  --color-white: #FFFFFF;
+  --color-gray: #F5F5F6;
 }
 
 body {
-  font-family: "Roboto Slab", serif;
+  font-family: "Montserrat", sans-serif;
   background-color: var(--bg-color);
 }
 
 /* Navbar */
 .navbar {
-  background-color: var(--primary-color);
+  background-color: var(--color-violet);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-family: "Montserrat", sans-serif;
   padding: 10px 50px;
   font-weight: 600;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
@@ -36,10 +40,12 @@ body {
   z-index: 100;
   top: 0;
   left: 0;
+  padding-bottom: 10px;
 }
 
 .navbar ul {
   display: flex;
+  flex-direction: row;
   list-style: none;
 }
 
@@ -49,20 +55,20 @@ body {
 
 .navbar ul li a {
   text-decoration: none;
-  color: var(--navbar-text-color);
+  color: var(--color-white);
+  transition: 0.3s;
   position: relative;
 }
 
 .navbar ul li a:hover,
 .navbar ul li a.active {
-  color: var(--accent-color);
+  color: var(--color-green);
 }
 
 .nav-pills .nav-link.active {
-  background-color: transparent;
-  color: var(--accent-color) !important;
+  background-color: transparent; /* Change to your preferred color */
+  color: var(--color-green) !important;
 }
-
 .navbar img {
   width: 166px;
   height: 29px;
@@ -73,30 +79,38 @@ body {
   display: block;
   width: 100%;
   height: 2px;
-  background-color: var(--accent-color);
+  background-color: var(--color-green);
   position: absolute;
   bottom: -5px;
   left: 0;
+  color: #4bbb8a;
+}
+.navbar-toggler{
+    color: transparent;
+    background-color: var(--color-white);
 }
 
-.navbar-toggler {
-  background-color: var(--navbar-text-color);
+/**when click the navbar-toggler button  show clickables */
+.navbar-toggler:focus{
+  color: var(--color-white);
 }
+/* Section Styles */
 
-/* Contact Button */
 .btnContact {
-  padding: 5px;
-  width: 150px;
+  padding: 10px 10px;
+  width: 180px;
   border-radius: 10px;
-  background-color: var(--accent-color);
-  color: #fafafb;
+  background-color: var(--color-green);
+  color: var(--color-white);
+  border: none;
+
 }
 
 .btnContact:hover {
-  transform: scale(1.1);
-  transition: transform 0.5s;
-  background: var(--bg-black);
-  color: var(--navbar-text-color);
+  /**dark green */
+  background-color: hsl(164, 51%, 22%);
+  color: var(--color-white);
+  transition: 0.5s;
 }
 
 @media screen and (max-width: 992px) {
@@ -114,6 +128,7 @@ body {
 #containerfluid1 {
   margin-top: 50px;
   width: 100%;
+  padding-bottom: 30px;
 }
 
 #layout1 {
@@ -127,18 +142,21 @@ body {
   width: 80%;
 }
 
-#layout1 h1 {
+#titleID {
   text-align: center;
-  margin-top: 30px;
-  color: var(--text-color);
+  margin-top: 50px;
+  color: var(--color-violet);
+  font-weight: bold;
 }
+
 
 #layout1 #textSub {
   text-align: center;
-  margin-top: 10px;
-  color: var(--text-color);
+  color: var(--color-violet);
+  padding-bottom: 20px;
 }
 
+/* Release Notes Grid */
 /* Release Notes Grid */
 #wrapper1 {
   width: 100%;
@@ -149,65 +167,76 @@ body {
   height: auto;
 }
 
-#wrapper1 .card {
-  color: var(--bg-color);
-  height: 100%; /* Ensures all cards are of equal height */
+.card {
+  color: var(--color-white);
+  height: 100%;
   width: 100%;
   max-width: 360px;
   margin: auto;
   display: flex;
   flex-direction: column;
+  border-radius: 15px;
+  
 }
 
+/* Card Header */
 .card-header {
-  background-color: #342D3E;
-  color: white;
-  padding: 16px;
-  border-radius: 12px 12px 0 0;
+  background-color: var(--color-violet);
+  color: var(--color-white);
+  padding: 20px;
   display: flex;
   flex-direction: column;
+  border-radius: 15px 15px 0 0;
+}
+#header1{
+  border-radius: 15px 15px 0 0;
 }
 
-.card-header h3 {
+/* Title */
+.card-header h5 {
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0;
+  color: var(--color-white);
 }
 
 .release-date {
-  font-size: 0.875rem;
-  color: var(--navbar-text-color);
-  font-style: italic;
+  color: var(--color-white);
   margin: 0;
   padding-top: 5px;
 }
 
+/* Card Body */
 .card-body {
   padding: 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex-grow: 1; /* Ensures content stretches to fill the card */
-  background-color: var(--navbar-text-color);
+  flex-grow: 1;
+  background-color:var(--color-white);
+  border-radius: 0 0 15px 15px;/* Ensures smooth bottom corners */
 }
 
+/* Description */
 .description {
-  color: var(--text-color);
+  color: var(--color-violet);
   margin-bottom: 16px;
   display: -webkit-box;
-  line-clamp: 2; /* Limits text to 2 lines */
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  line-height: 1.5rem;
+  max-height: 3rem;
 }
 
-/* Ensures button stays at the bottom */
+/* Button Styling */
 .view-btn {
   width: 100%;
-  background-color: #4BBB8A;
+  background-color: var(--color-green);
   color: white;
   padding: 12px;
-  border-radius: 8px;
+  border-radius: 8px; /* Applies rounded corners */
   font-weight: 600;
   text-align: center;
   cursor: pointer;
@@ -217,5 +246,5 @@ body {
 }
 
 .view-btn:hover {
-  background-color: #43A57A;
+  background-color: hsl(164, 51%, 22%);
 }

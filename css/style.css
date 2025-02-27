@@ -109,7 +109,7 @@ body {
 
 /*Main content*/
 .container-fluid {
-  height: 95vh;
+  height: 97vh;
   max-width: none; /* Removes any maximum width restrictions */
   margin: 0;
   width: 100vw; /* Ensures full viewport width */

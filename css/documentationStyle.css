@@ -13,17 +13,21 @@
     --accent-color: #4bbb8a;
     --bg-secondary: #677776;
     --bg-black: #201c1c;
+    /** revision */
+    --color-violet:#342F40;
+    --color-green:#0D7C5F;
+    --color-white: #FFFFFF;
+    --color-gray: #F5F5F6;
   }
   
   body {
     font-family: "Montserrat", sans-serif;
     background-color: var(--bg-color);
-    font-family: "Roboto Slab", serif;
   }
   
   /* Navbar */
   .navbar {
-    background-color: var(--primary-color);
+    background-color: var(--color-violet);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -51,18 +55,19 @@
   
   .navbar ul li a {
     text-decoration: none;
-    color: var(--navbar-text-color);
+    color: var(--color-white);
+    transition: 0.3s;
     position: relative;
   }
   
   .navbar ul li a:hover,
   .navbar ul li a.active {
-    color: var(--accent-color);
+    color: var(--color-green);
   }
   
   .nav-pills .nav-link.active {
     background-color: transparent; /* Change to your preferred color */
-    color: var(--accent-color) !important;
+    color: var(--color-green) !important;
   }
   .navbar img {
     width: 166px;
@@ -74,31 +79,37 @@
     display: block;
     width: 100%;
     height: 2px;
-    background-color: var(--accent-color);
+    background-color: var(--color-green);
     position: absolute;
     bottom: -5px;
     left: 0;
     color: #4bbb8a;
   }
   .navbar-toggler{
-      color: #fafafb;
-      background-color: var(--navbar-text-color);
+      color: transparent;
+      background-color: var(--color-white);
+  }
+
+  /**when click the navbar-toggler button  show clickables */
+  .navbar-toggler:focus{
+    color: var(--color-white);
   }
   /* Section Styles */
   
   .btnContact {
-    padding: 5px;
-    width: 150px;
+    padding: 10px 10px;
+    width: 180px;
     border-radius: 10px;
-    background-color: var(--accent-color);
-    color: #fafafb;
+    background-color: var(--color-green);
+    color: var(--color-white);
+    border: none;
   }
   
   .btnContact:hover {
-    transform: scale(1.1);
-    transition: transform 0.5s;
-    background: var(--bg-black);
-    color: var(--navbar-text-color);
+    /**dark green */
+    background-color: hsl(164, 51%, 22%);
+    color: var(--color-white);
+    transition: 0.5s;
   }
   
   @media screen and (max-width: 992px) {
@@ -141,6 +152,9 @@
     width: 100%;
     height:400px ;
 }
+#main1 h1{
+    color: var(--color-violet);
+}
 
 #divWrapper{
     width: 100%;
@@ -155,10 +169,11 @@
 #divWrapper .card{
     height: auto;
     width: 360px;
-    background-color: var(--bg-color);
-    color: var(--bg-color);
+    background-color: var(--color-white);
+    color: var(--color-white);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    
+    border-radius: 15px;
+
 }
 
 #divWrapper .card .card-body{
@@ -166,8 +181,9 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    background-color: var(--primary-color);
-    
+    background-color: var(--color-violet);
+    border-radius: 15px 15px 0 0;
+    padding: 15px;
 }
 
 #divbutton{
@@ -176,14 +192,15 @@
   min-height: 80px;
   display: flex;
   align-items: center;
-  background-color:var(--bg-color);
+  background-color:var(--color-white);
   justify-content: end;
+  border-radius: 0 0 15px 15px;
 }
 
 #divWrapper .card .btnView{
     border: none;
-    background-color: var(--accent-color);
-    color: var(--bg-color);
+    background-color: var(--color-green);
+    color: var(--color-white);
     padding: 10px 20px;
     border-radius: 10px;
     width: 120px;
@@ -192,10 +209,9 @@
 }
 
 #divWrapper .card .btnView:hover{
-    background-color: var(--accent-color);
-    color: var(--bg-color);
-    transform: scale(1.1);
-    transition: transform 0.5s;
+    background-color: hsl(164, 51%, 22%);
+    color: var(--color-white);
+    transition: 0.5s;
 }
 
 

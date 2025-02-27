@@ -138,7 +138,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php foreach ($versions as $version): ?>
               <div class="card mt-3">
                 <div class="card-body">
-                  <h5 class="card-title">Version: <?php echo htmlspecialchars($version['version_name']); ?></h5>
+                  <h5 class="card-title"><?php echo htmlspecialchars($version['version_name']); ?></h5>
                   <p class="card-text"><?php echo htmlspecialchars($version['description']); ?></p>
 
                 </div>
