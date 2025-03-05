@@ -18,7 +18,7 @@
 body {
   font-family: "Montserrat", sans-serif;
   background-color: var(--bg-color);
-  font-family: "Roboto Slab", serif;
+  font: "Montserrat", sans-serif;
 }
 
 /* Navbar */
@@ -115,6 +115,7 @@ body {
   width: 100vw; /* Ensures full viewport width */
 }
 
+
 #containerfluid1 {
   position: relative; /* Needed for absolute positioning of pseudo-element */
   background-color: aquamarine;
@@ -196,7 +197,6 @@ body {
 }
 
 /** Our Services */
-
 #containerfluid2 {
   background-color: var(--primary-color);
   padding: 30px;

@@ -12,8 +12,9 @@ $result = $conn->query($sql);
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fixed Navbar</title>
-  <link rel="icon" href="img/image.png" type="image/x-icon" />
+  <title>Lhike ERP</title>
+
+  <link rel="icon" href="image/icon/logoWithoutName.png" type="image/x-icon" />
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
@@ -24,9 +25,8 @@ $result = $conn->query($sql);
   <!--Font import Roboto Slab-->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+rel="stylesheet">
   <link rel="stylesheet" href="https://fontawesome.com/icons/location-dot?f=classic&s=solid" />
 </head>
 
@@ -76,9 +76,9 @@ $result = $conn->query($sql);
   <section class="container-fluid " id="containerfluid1">
     <div class="container" id="layout1">
       <h1 class="text-center mb-4" id="titleID">Release Notes</h1>
-      <h3 class="text-center" id="textSub">
+      <h4 class="text-center" id="textSub">
         The latest release of LHIKE ERP introduces major enhancements to Logistics, Human Resources, Inventory, Kanban, and E-commerce modules. This update focuses on streamlining processes, boosting productivity, and delivering real-time insights for better decision-making. It includes new features, bug fixes, and performance improvements for a smoother user experience.
-      </h3>
+      </h4>
 
       <div class="row g-4">
         <?php
@@ -93,7 +93,7 @@ $result = $conn->query($sql);
                 </div>
                 <div class="card-body">
                   <p class="description"><?php echo nl2br(htmlspecialchars($row['description'])); ?></p>
-                  <button class="view-btn">View</button>
+                  <a href="<?php echo htmlspecialchars($row['link']); ?>" class="view-btn" target="_blank">View</a>
                 </div>
               </div>
             </div>

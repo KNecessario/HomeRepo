@@ -133,6 +133,7 @@
 #img1{
   height: 36px; /* Same height as h1 text */
   width: auto; /* Maintain aspect ratio */
+  padding-right: 10px;
 }
 #img1:hover{
   transform: scale(1.1);
@@ -154,6 +155,7 @@
 }
 #main1 h1{
     color: var(--color-violet);
+    font-weight: bold;
 }
 
 #divWrapper{
@@ -164,6 +166,13 @@
     gap: 30px;
     padding: 20px;
    
+}
+
+
+
+.card-title{
+    color: var(--color--white);
+    font-weight: bold;
 }
 
 #divWrapper .card{
@@ -212,6 +221,27 @@
     background-color: hsl(164, 51%, 22%);
     color: var(--color-white);
     transition: 0.5s;
+}
+
+
+
+#linkButton{
+  border: none;
+    background-color: var(--color-green);
+    color: var(--color-white);
+    padding: 10px 20px;
+    border-radius: 10px;
+    width: 120px;
+    margin-right: 25px;
+    border-radius: 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+#linkButton:hover{
+  background-color: hsl(164, 51%, 22%);
+  color: var(--color-white);
+  transition: 0.5s;
 }
 
 

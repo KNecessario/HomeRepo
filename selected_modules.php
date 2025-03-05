@@ -78,8 +78,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   <body>
     <!-- Navbar -->
-
-    <!--nav bar-->
     <nav class="navbar navbar-expand-lg d-flex justify-content-between">
       <a class="navbar-brand" href="#">
         <img src="image/logo.png" alt="logo" />
@@ -114,7 +112,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           </ul>
         </div>
       </div>
-
       <button class="btnContact">Contact Us</button>
     </nav>
 
@@ -123,16 +120,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <div class="container" id="containerBack">
           <a href="documentation.php"><img src="image/icon/back.svg" alt="" id="img1"></a>
-          <h1 class="my-4"><?php echo htmlspecialchars($module['modulename']); ?> Documentation</h1>
+          <h1 class="my-4"><?php echo htmlspecialchars($module['modulename']); ?> Module</h1>
         </div>
-
-
-
+        
         <div class="container-fluid" id="divWrapper">
-
-
-
-
           <!-- Display versions and handle version selection -->
           <?php if (!empty($versions)): ?>
             <?php foreach ($versions as $version): ?>
@@ -140,23 +131,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="card-body">
                   <h5 class="card-title"><?php echo htmlspecialchars($version['version_name']); ?></h5>
                   <p class="card-text"><?php echo htmlspecialchars($version['description']); ?></p>
-
                 </div>
                 <div class="container-fluid p-0 m-0" id="divbutton">
-                  <form action="select_module.php" method="POST">
                     <input type="hidden" name="module_id" value="<?php echo $row['module_id']; ?>">
                     <input type="hidden" name="modulename" value="<?php echo htmlspecialchars($row['modulename']); ?>">
                     <input type="hidden" name="description" value="<?php echo htmlspecialchars($row['description']); ?>">
-                    <button type="submit" class="btnView">View</button>
-
-
+                    <a href="<?php echo htmlspecialchars($version['link']); ?>" id = "linkButton" target="_blank">View</a>
                 </div>
               </div>
             <?php endforeach; ?>
           <?php else: ?>
             <p>No versions available for this module.</p>
           <?php endif; ?>
-
         </div>
       </div>
     </section>
