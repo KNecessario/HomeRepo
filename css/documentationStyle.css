@@ -27,7 +27,7 @@
   
   /* Navbar */
   .navbar {
-    background-color: var(--color-violet);
+    background-color: #003559;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -62,12 +62,12 @@
   
   .navbar ul li a:hover,
   .navbar ul li a.active {
-    color: var(--color-green);
+    color: #2693BE;
   }
   
   .nav-pills .nav-link.active {
     background-color: transparent; /* Change to your preferred color */
-    color: var(--color-green) !important;
+    color: #2693BE !important;
   }
   .navbar img {
     width: 166px;
@@ -79,11 +79,11 @@
     display: block;
     width: 100%;
     height: 2px;
-    background-color: var(--color-green);
+    background-color: #2693BE;
     position: absolute;
     bottom: -5px;
     left: 0;
-    color: #4bbb8a;
+    color: #2693BE;
   }
   .navbar-toggler{
       color: transparent;
@@ -100,17 +100,18 @@
     padding: 10px 10px;
     width: 180px;
     border-radius: 10px;
-    background-color: var(--color-green);
+    background: rgb(38,147,190);
+    background: linear-gradient(90deg, rgba(38,147,190,1) 0%, rgba(18,68,88,1) 100%);
     color: var(--color-white);
     border: none;
   }
   
   .btnContact:hover {
-    /**dark green */
-    background-color: hsl(164, 51%, 22%);
-    color: var(--color-white);
+    
+    transform: scale(1.05);
     transition: 0.5s;
   }
+
   
   @media screen and (max-width: 992px) {
     .btnContact {
@@ -154,8 +155,9 @@
     height:400px ;
 }
 #main1 h1{
-    color: var(--color-violet);
-    font-weight: bold;
+  
+  color: #003559;
+  font-weight: bold;
 }
 
 #divWrapper{
@@ -190,7 +192,8 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    background-color: var(--color-violet);
+    background: rgb(0,53,89);
+    background: linear-gradient(90deg, rgba(0,53,89,1) 25%, rgba(0,114,191,1) 100%);
     border-radius: 15px 15px 0 0;
     padding: 15px;
 }
@@ -208,7 +211,7 @@
 
 #divWrapper .card .btnView{
     border: none;
-    background-color: var(--color-green);
+    background-color: #2693BE;
     color: var(--color-white);
     padding: 10px 20px;
     border-radius: 10px;
@@ -218,7 +221,7 @@
 }
 
 #divWrapper .card .btnView:hover{
-    background-color: hsl(164, 51%, 22%);
+    background-color: #003559;
     color: var(--color-white);
     transition: 0.5s;
 }
@@ -226,8 +229,8 @@
 
 
 #linkButton{
-  border: none;
-    background-color: var(--color-green);
+    border: none;
+    background-color: #2693BE;
     color: var(--color-white);
     padding: 10px 20px;
     border-radius: 10px;
@@ -239,16 +242,11 @@
 }
 
 #linkButton:hover{
-  background-color: hsl(164, 51%, 22%);
+  background-color: #003559;
   color: var(--color-white);
   transition: 0.5s;
 }
 
 
 
-
-/**Selected Modules**/
-#main1 h1{
-  color: var(--text-color);
-}
 
