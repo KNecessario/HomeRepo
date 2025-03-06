@@ -75,23 +75,26 @@ $result = $conn->query($sql);
   <section class="container-fluid p-0" id="container1">
     <div class="container-lg p-0" id="main1">
         <h1 class="my-4">Documentation</h1>
-        <div class="container-fluid" id="divWrapper">
+        <div class="container-fluid p-0 m-0" id="divWrapper">
             <?php if ($result && $result->num_rows > 0): ?>
                 <?php while ($row = $result->fetch_assoc()): ?>
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo htmlspecialchars($row['modulename']); ?></h5>
-                            <p class="card-text"><?php echo htmlspecialchars($row['description']); ?></p>
-                        </div>
-                        <div class="container-fluid p-0 m-0 text-end" id="divbutton">
-                            <form action="select_module.php" method="POST">
-                                <input type="hidden" name="module_id" value="<?php echo $row['module_id']; ?>">
-                                <input type="hidden" name="modulename" value="<?php echo htmlspecialchars($row['modulename']); ?>">
-                                <input type="hidden" name="description" value="<?php echo htmlspecialchars($row['description']); ?>">
-                                <button type="submit" class="btnView">View</button>
-                            </form>
-                        </div>
-                    </div>
+                  <div class="module-card">
+                            <div class="card-image">
+                                <img src="image/documentationImg/random1.png" alt="<?php echo htmlspecialchars($row['modulename']); ?>" />
+                            </div>
+                            <div class="card-content">
+                                <h3 class="module-title"><?php echo htmlspecialchars($row['modulename']); ?></h3>
+                                <p class="module-description"><?php echo htmlspecialchars($row['description']); ?></p>
+                            </div>
+                            <div class="card-action">
+                                <form action="select_module.php" method="POST">
+                                    <input type="hidden" name="module_id" value="<?php echo $row['module_id']; ?>">
+                                    <input type="hidden" name="modulename" value="<?php echo htmlspecialchars($row['modulename']); ?>">
+                                    <input type="hidden" name="description" value="<?php echo htmlspecialchars($row['description']); ?>">
+                                    <button type="submit" class="btn-view">VIEW</button>
+                                </form>
+                            </div>
+                      </div>
                 <?php endwhile; ?>
             <?php else: ?>
                 <p>No modules found.</p>

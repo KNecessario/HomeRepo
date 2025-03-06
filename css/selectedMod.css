@@ -163,14 +163,11 @@
 #divWrapper{
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
     padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-bottom: 2rem;
-    
+   
 }
 
 
@@ -180,95 +177,52 @@
     font-weight: bold;
 }
 
+#divWrapper .card{
+    height: auto;
+    width: 360px;
+    background-color: var(--color-white);
+    color: var(--color-white);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
 
+}
 
-/* Module Card Styling */
-.module-card {
+#divWrapper .card .card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    background: rgb(0,53,89);
+    background: linear-gradient(90deg, rgba(0,53,89,1) 25%, rgba(0,114,191,1) 100%);
+    border-radius: 15px 15px 0 0;
+    padding: 15px;
+}
+
+#divbutton{
+  width: 100%;
+  height: auto;
+  min-height: 80px;
   display: flex;
-  flex-direction: column;
-  background-color: var(--color-white);
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  align-items: center;
+  background-color:var(--color-white);
+  justify-content: end;
+  border-radius: 0 0 15px 15px;
 }
 
-.module-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+#divWrapper .card .btnView{
+    border: none;
+    background-color: #2693BE;
+    color: var(--color-white);
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
 }
 
-.card-image {
-  width: 100%;
-  height: 180px;
-  overflow: hidden;
-}
-
-.card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.card-content {
-  padding: 16px 20px;
-  background-color: var(--color-primary);
-  color: #003559;
-}
-
-.module-title {
-  margin: 0 0 8px 0;
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #003559;
-}
-
-.module-description {
-  margin: 0;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  opacity: 0.9;
-  color: #003559;
-}
-
-.card-action {
-  
-  background-color: var(--color-white);
-}
-
-.card-action form {
-  width: 100%;
-}
-
-.btn-view {
-  width: 100%;
-  padding: 12px;
-  background-color:#003559 ;
-  color: var(--color-white);
-  border: none;
-  border-radius: var(--border-radius);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn-view:hover {
-  background-color: var(--color-secondary);
-}
-
-/* Responsive adjustments */
-@media (max-width: 992px) {
-  .module-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 576px) {
-  .module-grid {
-    grid-template-columns: 1fr;
-  }
+#divWrapper .card .btnView:hover{
+    background-color: #003559;
+    color: var(--color-white);
+    transition: 0.5s;
 }
 
 
